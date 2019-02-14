@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Reddit Clone App using MERN stack",
   "main": "server.js",
+  "engines": {
+    "node": "11.6.0"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
