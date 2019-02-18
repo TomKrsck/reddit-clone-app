@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI: 'mongodb+srv://Thomas:uR4FH9J3nSVuZ6ix@reddit-clone-glitp.mongodb.net/reddit-clone-db?retryWrites=true'
+    mongoURI: 'mongodb://Thomas:IqXdaBiOO3ocHYB3@reddit-clone-shard-00-00-glitp.mongodb.net:27017,reddit-clone-shard-00-01-glitp.mongodb.net:27017,reddit-clone-shard-00-02-glitp.mongodb.net:27017/test?ssl=true&replicaSet=reddit-clone-shard-0&authSource=admin&retryWrites=true'
 }
