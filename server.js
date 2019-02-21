@@ -2,15 +2,25 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const passport = require('passport');
 
 const items = require('./routes/api/items');
+const users = require('./routes/api/users');
 
 const app = express();
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
-// DB Config
+// Passport middleware
+app.use(passport.initialize());
+// Passport config for jwt secret
+require("./config/passport")(passport);
+
+// DB Config -- Removed from git
 const db = require('./config/keys').mongoURI;
 
 // Connect to Mongo
@@ -21,6 +31,7 @@ mongoose
 
 // Use Routes
 app.use('/api/items', items);
+app.use("/api/users", users);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

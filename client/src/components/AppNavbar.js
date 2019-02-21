@@ -9,6 +9,7 @@ import {
     NavLink,
     Container
 } from 'reactstrap';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class AppNavbar extends Component {
     state = {
