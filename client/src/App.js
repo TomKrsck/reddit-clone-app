@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from './actions/authActions';
@@ -11,6 +11,7 @@ import ItemModal from './components/ItemModal';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 import { Provider } from 'react-redux';
@@ -18,7 +19,6 @@ import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import setAuthToken from './utils/setAuthToken';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

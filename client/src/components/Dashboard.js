@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from 'reactstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
+import { logoutUser } from "../actions/authActions";
 
 class Dashboard extends Component { 
 

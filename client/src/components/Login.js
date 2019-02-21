@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { loginUser } from '../actions/authActions';
+import { withRouter } from 'react-router-dom';
 import {
     Button,
     Form,
@@ -22,13 +23,13 @@ class Login extends Component {
     componentDidMount() {
         // If logged in and user navigates to Login page, should redirect them to dashboard
         if (this.props.auth.isAuthenticated) {
-          this.props.history.push("/dashboard");
+          this.props.history.push('/dashboard');
         }
       }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
-          this.props.history.push("/"); // push user to homepage when they login
+          this.props.history.push('/dashboard'); // push user to homepage when they login
         }
 
         if (nextProps.errors) {
@@ -91,4 +92,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps, { loginUser })(Login);
+export default connect(mapStateToProps, { loginUser })(withRouter(Login));

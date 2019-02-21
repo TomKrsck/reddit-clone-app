@@ -15,7 +15,7 @@ import {
       switch (action.type) {
             case SET_CURRENT_USER:
                 return {
-                    ...stat,
+                    ...state,
                     isAuthenticated: !isEmpty(action.payload),
                     user: action.payload
                 };
